@@ -1,0 +1,4 @@
+git rev-parse --no-revs --no-flags master 
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
