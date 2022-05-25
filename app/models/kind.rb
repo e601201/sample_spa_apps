@@ -1,6 +1,6 @@
 class Kind < ApplicationRecord
   
-  has_many :foods
+  has_many :foods, dependent: :destroy
 
   def hashed
     h = {}
