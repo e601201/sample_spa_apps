@@ -17,6 +17,7 @@ class KindsController < ApplicationController
 
   # GET /kinds/1/edit
   def edit
+    authorize! @kind
   end
 
   # POST /kinds or /kinds.json

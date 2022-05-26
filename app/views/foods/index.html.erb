@@ -21,7 +21,9 @@
         </div>
       <% end %>
       <%= paginate @foods %>
-      <%= link_to 'Add New food', new_food_path, class: "btn btn-outline btn-primary ml-2" %>
+      <% if loyalty(@food, :foods).create? %>
+        <%= link_to 'Add New food', new_food_path, class: "btn btn-outline btn-primary ml-2" %>
+      <% end %>
     </div>
     <%# =========================== 検索結果/一覧 =========================== %>
     <%= turbo_frame_tag :foods do %>

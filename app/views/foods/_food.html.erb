@@ -15,9 +15,11 @@
       <p>
         <%= food.memo %>
       </p>
-      <div class="justify-end card-actions">
-        <%= link_to 'Edit', edit_food_path(food), data: {turbo: false}, class: "btn btn-outline btn-primary" %>
-      </div>
+      <% if loyalty(food, :foods).update? %>
+        <div class="justify-end card-actions">
+          <%= link_to 'Edit', edit_food_path(food), data: {turbo: false}, class: "btn btn-outline btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

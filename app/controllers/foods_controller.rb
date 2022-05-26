@@ -22,6 +22,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
+    authorize! @food
     @food = Food.new(food_params)
 
     respond_to do |format|
@@ -37,6 +38,7 @@ class FoodsController < ApplicationController
 
   # PATCH/PUT /foods/1 or /foods/1.json
   def update
+    authorize! @food
     respond_to do |format|
       if @food.update(food_params)
         format.html { redirect_to food_url(@food), notice: "Food was successfully updated." }
@@ -50,7 +52,8 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    @food.destroy
+    authorize! @food
+    @food.destroy!
 
     respond_to do |format|
       format.html { redirect_to foods_url, notice: "Food was successfully destroyed." }
