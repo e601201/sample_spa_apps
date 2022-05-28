@@ -1,0 +1,2 @@
+class PeopleLoyalty < ApplicationLoyalty
+end
