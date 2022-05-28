@@ -1,7 +1,6 @@
 class FoodsController < ApplicationController
   skip_before_action :require_login, only: :index
   before_action :set_food, only: %i[ show edit update destroy ]
-  before_action :hash_kind_id_and_name, only: %i[new edit]
 
   # GET /foods or /foods.json
   def index
@@ -70,11 +69,5 @@ class FoodsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def food_params
       params.require(:food).permit(:name, :kind_id, :price, :memo, :is_deleted, :deleted_at)
-    end
-    #このコードが死ぬほど気に食わないので、いい感じに書き直せる方法を模索中。そして募集中
-    def hash_kind_id_and_name
-      @hash_kind_id_and_name = {}
-      kinds = Kind.all
-      kinds.each {|k| @hash_kind_id_and_name[k.id] = k.name}
     end
 end

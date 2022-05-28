@@ -18,7 +18,7 @@
 
   <div class="my-5">
     <%= form.label :kind_id %>
-    <%= form.select :kind_id, @hash_kind_id_and_name.invert ,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :kind_id, Kind.pluck(:name,:id) ,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
