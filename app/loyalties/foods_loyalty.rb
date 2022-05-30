@@ -10,10 +10,6 @@ class FoodsLoyalty < ApplicationLoyalty
   def create?
     user&.role_admin? || user&.role_editor?
   end
-  
-  def update?
-    user&.role_admin? || user&.role_editor?
-  end
 
   def destroy?
     user&.role_admin? || user&.role_editor?
