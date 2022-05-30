@@ -1,6 +1,6 @@
 class PersonSessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
-  def new;end
+  skip_before_action :require_login, only: %i[new create]
+  def new; end
 
   def create
     @person = login(params[:email], params[:password])

@@ -1,1 +1,1 @@
-json.partial! "kinds/kind", kind: @kind
+json.partial! 'kinds/kind', kind: @kind
