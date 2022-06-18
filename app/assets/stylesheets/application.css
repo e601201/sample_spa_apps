@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+turbo-frame {
+  border: 1px rgb(255, 0, 0) solid;
+  display: block;
+}
+
+turbo-frame::before {
+  content: "Frame: #" attr(id);
+  position: relative;
+  top: 4px;
+  right: -4px;
+  display: inline-block;
+  color: red;
+  font-size: 12px;
+  z-index: 9999;
+  background-color: rgb(255, 255, 255);
+  padding: 4px;
+  border: 1px red solid;
+}
