@@ -16,7 +16,7 @@
         </p>
         <% if loyalty(food, :foods).update? %>
           <div class="justify-end card-actions">
-            <%= link_to 'Edit', edit_food_path(food), class: "btn btn-outline btn-primary" %>
+            <%= link_to t('.edit'), edit_food_path(food), class: "btn btn-outline btn-primary" %>
           </div>
         <% end %>
       </div>

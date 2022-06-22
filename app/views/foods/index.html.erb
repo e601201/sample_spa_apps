@@ -5,7 +5,7 @@
     <% end %>
 
     <div class="flex justify-between items-center mb-4">
-      <h1 class="font-bold text-4xl">Foods</h1>
+      <h1 class="font-bold text-4xl"><%= Food.model_name.human %></h1>
     </div>
 
     <%# =========================== 検索フォーム =========================== %>
@@ -17,13 +17,13 @@
           </div>
           <div class="col-span-2">
             <%# data-turbo-frame属性を指定することによって、turbo_frame_tagの外からでもturbo_frameリクエストを送れる %>
-            <%= f.submit '検索', class: 'btn btn-outline btn-primary', data: { turbo_frame: 'ransack_search' } %>
+            <%= f.submit class: 'btn btn-outline btn-primary', data: { turbo_frame: 'ransack_search' } %>
           </div>
         </div>
       <% end %>
       <%= paginate @foods %>
       <% if loyalty(@food, :foods).create? %>
-        <%= link_to 'Add New food', new_food_path, class: "btn btn-outline btn-primary ml-2" %>
+        <%= link_to (t '.add_new_food'), new_food_path, class: "btn btn-outline btn-primary ml-2" %>
       <% end %>
     </div>
     <%# =========================== 検索結果/一覧 =========================== %>

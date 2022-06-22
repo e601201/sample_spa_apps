@@ -1,0 +1,27 @@
+ja:
+  default:
+    login: "ログイン"
+    edit: "編集"
+    search_word: "検索ワード"
+    password_reset: 'パスワードリセット'
+    message:
+      not_index: "掲示板がありません"
+      not_authenticated: "ログインしてください"
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: "削除してもよろしいですか？"
+      require_login: "ログインをしてください"
+  helper:
+  admin:
+  foods:
+    index: 
+      add_new_food: 'メニューを追加'
+    food:
+      edit: '編集'
+
+  kinds:
+  people:
+  serson_sessions:

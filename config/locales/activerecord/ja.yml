@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      person: 'ユーザー'
+      food: '食べ物'
+      kind: '種類'
+    attributes:
+      person:
+        name: '氏名'
+        email: 'メールアドレス'
+        role: '役職'
+        password: 'パスワード'
+      food:
+        name: '名前'
+        kind_id: '種類'
+        price: '金額'
+        memo: '一言'
+      kind:
+        name: '名前'
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
