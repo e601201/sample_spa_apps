@@ -17,6 +17,9 @@
       <div class="drawer-content">
         <%= render 'shared/header' %>
         <main class="container mx-auto p-6 pb-16">
+          <div id="flash">
+            <%= render 'shared/flash_message' %>
+          </div>
           <%= yield %>
         </main>
       </div>

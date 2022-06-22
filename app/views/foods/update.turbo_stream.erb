@@ -1,0 +1,11 @@
+<%# turbo_stream.replace @food do %>
+  <%# render partial: "foods/food",locals: {food: @food} %>
+<%# end %>
+<%#-----上の文を下に省略------%>
+<%= turbo_stream.replace @food %>
+
+<%#% turbo_stream.update "flash" do %>
+  <%# render partial: "shared/flash_message"%>
+<%# end %>
+<%#-----上の文を下に省略------%>
+<%= turbo_stream_flash %>

@@ -36,14 +36,10 @@ class FoodsController < ApplicationController
 
   # PATCH/PUT /foods/1 or /foods/1.json
   def update
-    respond_to do |format|
-      if @food.update(food_params)
-        format.html { redirect_to food_url(@food), notice: 'Food was successfully updated.' }
-        format.json { render :show, status: :ok, location: @food }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
-      end
+    if @food.update(food_params)
+      flash.now[:success] = 'Food was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
