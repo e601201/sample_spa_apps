@@ -17,6 +17,7 @@
         <% if loyalty(food, :foods).update? %>
           <div class="justify-end card-actions">
             <%= link_to t('.edit'), edit_food_path(food), class: "btn btn-outline btn-primary" %>
+            <%= button_to "削除", food_path(food), method: :delete, class: "btn btn-outline btn-primary", form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
           </div>
         <% end %>
       </div>

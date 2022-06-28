@@ -8,8 +8,9 @@
       <h1 class="font-bold text-4xl"><%= Food.model_name.human %></h1>
     </div>
 
-    <%# =========================== 検索フォーム =========================== %>
     <div class="flex">
+
+      <%# =========================== 検索フォーム =========================== %>
       <%= search_form_for @q, url: foods_path do |f| %>
         <div class="grid grid-cols-6 gap-3">
           <div class="col-span-2">
@@ -21,20 +22,26 @@
           </div>
         </div>
       <% end %>
-      <%= paginate @foods %>
+
+      <%# =========================== 新規作成 =========================== %>
       <% if loyalty(@food, :foods).create? %>
-        <%= link_to (t '.add_new_food'), new_food_path, class: "btn btn-outline btn-primary ml-2" %>
+        <%= link_to (t '.add_new_food'),
+        new_food_path,
+        class: "btn btn-outline btn-primary ml-2",
+        data: { turbo_frame: "new_food" }
+        %>
       <% end %>
     </div>
     <%# =========================== 検索結果/一覧 =========================== %>
-    <%= turbo_frame_tag :foods do %>
-      <div id="foods" class="min-w-full">
-        <div class="grid grid-cols-12 gap-4">
-          <%= render @foods %>
-        </div>
+    <%= turbo_frame_tag "new_food" %>
+    <%= turbo_frame_tag "food-list" do %>
+    <div class="min-w-full">
+      <div id= "foods" class="grid grid-cols-12 gap-4">
+        <%= render @foods %>
       </div>
+    </div>
     <% end %>
-
     <%# =========================== ページネーション =========================== %>
+    <%= paginate @foods %>
   </div>
 <% end %>

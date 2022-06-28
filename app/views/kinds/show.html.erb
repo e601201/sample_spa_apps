@@ -24,7 +24,7 @@
       <h1 class="font-bold mb-2"> <%= "#{@kind.name}の一覧" %> </h1>
       <hr/>
     </div>
-    <%= turbo_frame_tag :foods, src: foods_path(q: { kind_id_eq: @kind.id }, per: 100), loading: "lazy" do %>
+    <%= turbo_frame_tag "food-list", src: foods_path(q: { kind_id_eq: @kind.id }, per: 100), loading: "lazy" do %>
       ...loading
     <% end %>
   </div>
