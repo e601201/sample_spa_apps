@@ -11,22 +11,14 @@
     <div class="flex">
 
       <%# =========================== 検索フォーム =========================== %>
-      <%= search_form_for(
-              @q,
-          data: {
-            turbo_frame: "foods-list",
-            controller: "form",
-            action: "input->form#submit"
-          } 
-        ) do |f| %>
+      <%= search_form_for @q, url: foods_path do |f| %>
         <div class="grid grid-cols-6 gap-3">
           <div class="col-span-2">
             <%= f.search_field :name_cont, class: "input input-bordered input-primary w-full", placeholder: "食べ物" %>
           </div>
           <div class="col-span-2">
             <%# data-turbo-frame属性を指定することによって、turbo_frame_tagの外からでもturbo_frameリクエストを送れる %>
-            <%# インスタンスサーチを実装したので、検索は不要になるよ。%>
-            <%# f.submit class: 'btn btn-outline btn-primary', data: { turbo_frame: 'ransack_search' } %>
+            <%= f.submit class: 'btn btn-outline btn-primary', data: { turbo_frame: 'ransack_search' } %>
           </div>
         </div>
       <% end %>
